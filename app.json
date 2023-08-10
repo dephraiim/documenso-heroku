@@ -1,0 +1,98 @@
+{
+  "name": "Documenso",
+  "description": "A Next.js application with a PostgreSQL backend",
+  "repository": "https://github.com/documenso/documenso",
+  "logo": "https://avatars.githubusercontent.com/u/127681099?s=200&v=4",
+  "keywords": ["nextjs", "postgresql", "documenso"],
+  "addons": [
+    {
+      "plan": "heroku-postgresql"
+    }
+  ],
+  "env": {
+    "NODE_VERSION": {
+      "description": "Node version for the app",
+      "value": "18.17.0"
+    },
+    "NEXT_PUBLIC_WEBAPP_URL": {
+      "description": "Replace HEROKU_APP_NAME with the name given to your app",
+      "value": "https://HEROKU_APP_NAME.herokuapp.com",
+      "required": "true"
+    },
+    "NEXTAUTH_URL": {
+      "description": "Replace HEROKU_APP_NAME with the name given to your app",
+      "value": "https://HEROKU_APP_NAME.herokuapp.com"
+    },
+    "NEXTAUTH_SECRET": {
+      "description": "Cookie encryption key",
+      "generator": "secret",
+      "required": "true"
+    },
+
+    "SENDGRID_API_KEY": {
+      "description": "The API key for SendGrid",
+      "required": false
+    },
+    "SMTP_MAIL_HOST": {
+      "description": "SMTP mail host",
+      "required": false
+    },
+    "SMTP_MAIL_PORT": {
+      "description": "SMTP mail port",
+      "required": false
+    },
+    "SMTP_MAIL_USER": {
+      "description": "SMTP mail user",
+      "required": false
+    },
+    "SMTP_MAIL_PASSWORD": {
+      "description": "SMTP mail password",
+      "required": false
+    },
+    "MAIL_FROM": {
+      "description": "Email for sending notifications",
+      "required": true
+    },
+
+    "STRIPE_API_KEY": {
+      "description": "Stripe API key",
+      "required": false
+    },
+    "STRIPE_WEBHOOK_SECRET": {
+      "description": "Stripe webhook secret",
+      "required": false
+    },
+    "NEXT_PUBLIC_STRIPE_COMMUNITY_PLAN_MONTHLY_PRICE_ID": {
+      "description": "Stripe monthly plan ID",
+      "required": false
+    },
+    "NEXT_PUBLIC_STRIPE_COMMUNITY_PLAN_YEARLY_PRICE_ID": {
+      "description": "Stripe yearly plan ID",
+      "required": false
+    },
+
+    "NEXT_PUBLIC_ALLOW_SIGNUP": {
+      "description": "Allow user signup",
+      "value": "true"
+    },
+    "NEXT_PUBLIC_ALLOW_SUBSCRIPTIONS": {
+      "description": "Allow user subscriptions",
+      "value": "false"
+    }
+  },
+  "scripts": {
+    "postdeploy": "npx prisma migrate deploy"
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "standard-1x"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "stack": "heroku-20"
+}
