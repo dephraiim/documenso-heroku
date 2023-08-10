@@ -2,11 +2,11 @@
   "name": "Documenso",
   "description": "Open Source Document signing",
   "repository": "https://github.com/documenso/documenso",
-  "logo": "https://avatars.githubusercontent.com/u/127681099?s=200&v=4",
+  "logo": "https://documenso.com/android-chrome-512x512.png",
   "keywords": ["nextjs", "postgresql", "documenso"],
   "addons": [
     {
-      "plan": "heroku-postgresql"
+      "plan": "heroku-postgresql:mini"
     }
   ],
   "env": {
@@ -86,7 +86,7 @@
   "formation": {
     "web": {
       "quantity": 1,
-      "size": "standard-1x"
+      "size": "basic"
     }
   },
   "buildpacks": [
