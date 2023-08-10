@@ -1,1 +1,1 @@
-web: npx prisma migrate deploy && npx turbo run start --filter=web
+web: npx turbo run start --filter=web
