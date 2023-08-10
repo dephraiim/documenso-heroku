@@ -1,1 +1,1 @@
-web: npx turbo run start --filter=web
+web: npm install dotenv && npx turbo run start --filter=web
